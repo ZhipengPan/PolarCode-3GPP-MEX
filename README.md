@@ -29,7 +29,7 @@ Value  | crc_polynomial_pattern
 11  | D^11 + D^10 + D^9 + D^5 + 1
 16  | D^16 + D^12 + D^5 + 1
 24  | D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 
-`    | + D^8 + D^4 + D^2 + D + 1
+~    | + D^8 + D^4 + D^2 + D + 1
 
 codewords --> returned codewords whose length is E;
 
@@ -58,7 +58,7 @@ Value  | crc_polynomial_pattern
 11  | D^11 + D^10 + D^9 + D^5 + 1
 16  | D^16 + D^12 + D^5 + 1
 24  | D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 
-`    | + D^8 + D^4 + D^2 + D + 1
+~    | + D^8 + D^4 + D^2 + D + 1
              
 a_hat --> returned decoded information bits whose length is A;
 
