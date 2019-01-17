@@ -64,7 +64,7 @@ a_hat --> returned decoded information bits whose length is A;
 ## Description
 
 
-![image](https://github.com/ZhipengPan/polar-code/blob/master/polar-factor.jpg)
+![image](https://github.com/ZhipengPan/PolarCode-3GPP-MEX/blob/master/result/polar(100%2C30)_AWGN_SNR.png)
 
 
 
