@@ -31,11 +31,9 @@ Value  | crc_polynomial_pattern
 24  | D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 
 `$$`    | + D^8 + D^4 + D^2 + D + 1
 
-
-
-             
-
 codewords --> returned codewords whose length is E;
+
+***Note: A + CRC_size <= E***
 
 
 ## polar decoder function:
