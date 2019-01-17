@@ -1,2 +1,78 @@
 # PolarCode-3GPP-MEX
-Polar code follow the standards of 3GPP Release 15
+
+This code is realized by C programming language, which transformed into the mex function to be called by matlab script.
+
+The Polar encoder and Polad decoder function follows the standard of the 3GPP latest TSG version "3GPP TS 38.212 V15.3.0 (2018-09), Multiplexing and channel coding (Release 15)" 
+
+https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3214
+
+Copyright: Zhipeng Pan, National University of Defense Technology
+
+
+
+## polar encoder function:
+codewords = polar_encoder(a,A,E,CRC_size);
+
+a --> binary information bits, row vector;
+
+A --> length of the binary information bits, scalar number;
+
+E --> length of the binary codeword bits, scalar number;
+
+
+CRC_size --> 
+              0: No CRC, 
+              
+              6: crc_polynomial_pattern = D^6 + D^5 + 1 
+              
+             11: crc_polynomial_pattern = D^11 + D^10 + D^9 + D^5 + 1
+             
+             16: crc_polynomial_pattern = D^16 + D^12 + D^5 + 1
+             
+             24: crc_polynomial_pattern = D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 + D^8 + D^4 + D^2 + D + 1
+
+codewords --> returned codewords whose length is E;
+
+
+## polar decoder function:
+
+a_hat = polar_decoder(LLR, A, E, L, min_sum,CRC_size);
+
+LLR --> soft information Logarithmic Likelihood Ratios (LLRS), 
+         each having a value obtained as LLR = ln(P(bit=0)/P(bit=1)
+         
+A --> the length of the decoded information bits;
+
+E --> the length of the codeword bits;
+
+L --> List size of the SCL decoding algorithm
+
+CRC_size --> 
+              0: No CRC, 
+              
+              6: crc_polynomial_pattern = D^6 + D^5 + 1 
+              
+             11: crc_polynomial_pattern = D^11 + D^10 + D^9 + D^5 + 1
+             
+             16: crc_polynomial_pattern = D^16 + D^12 + D^5 + 1
+             
+             24: crc_polynomial_pattern = D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 + D^8 + D^4 + D^2 + D + 1
+             
+a_hat --> returned decoded information bits whose length is A;
+
+
+## Description
+
+
+![image](https://github.com/ZhipengPan/polar-code/blob/master/polar-factor.jpg)
+
+
+
+
+## Author:
+Zhipeng Pan
+
+Changsha, Hunan
+
+Email: panzhipeng18@hotmail.com,panzhipeng10@nudt.edu.cn
+
