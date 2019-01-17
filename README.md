@@ -21,15 +21,19 @@ E --> length of the binary codeword bits, scalar number;
 
 
 CRC_size --> 
-              0: No CRC, 
-              
-              6: crc_polynomial_pattern = D^6 + D^5 + 1 
-              
-             11: crc_polynomial_pattern = D^11 + D^10 + D^9 + D^5 + 1
+
+Value  | crc_polynomial_pattern
+-----|---
+0   | No CRC
+6   | D^6 + D^5 + 1
+11  | D^11 + D^10 + D^9 + D^5 + 1
+16  | D^16 + D^12 + D^5 + 1
+24  | D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 
+`$$`    | + D^8 + D^4 + D^2 + D + 1
+
+
+
              
-             16: crc_polynomial_pattern = D^16 + D^12 + D^5 + 1
-             
-             24: crc_polynomial_pattern = D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 + D^8 + D^4 + D^2 + D + 1
 
 codewords --> returned codewords whose length is E;
 
@@ -48,20 +52,20 @@ E --> the length of the codeword bits;
 L --> List size of the SCL decoding algorithm
 
 CRC_size --> 
-              0: No CRC, 
-              
-              6: crc_polynomial_pattern = D^6 + D^5 + 1 
-              
-             11: crc_polynomial_pattern = D^11 + D^10 + D^9 + D^5 + 1
-             
-             16: crc_polynomial_pattern = D^16 + D^12 + D^5 + 1
-             
-             24: crc_polynomial_pattern = D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 + D^8 + D^4 + D^2 + D + 1
+
+Value  | crc_polynomial_pattern
+-----|---
+0   | No CRC
+6   | D^6 + D^5 + 1
+11  | D^11 + D^10 + D^9 + D^5 + 1
+16  | D^16 + D^12 + D^5 + 1
+24  | D^24 + D^23 + D^21 + D^20 + D^17 + D^15 + D^13 + D^12 
+`$$`    | + D^8 + D^4 + D^2 + D + 1
              
 a_hat --> returned decoded information bits whose length is A;
 
 
-## Description
+## Result
 
 
 ![image](https://github.com/ZhipengPan/PolarCode-3GPP-MEX/blob/master/result/polar(100%2C30)_AWGN_SNR.png)
@@ -75,4 +79,3 @@ Zhipeng Pan
 Changsha, Hunan
 
 Email: panzhipeng18@hotmail.com,panzhipeng10@nudt.edu.cn
-
