@@ -83,7 +83,7 @@ for iter_snr = 1:length(SNR)
         ESC = ESC+mean(mean(symbols.*conj(symbols)));%统计空口中每个符号能量，应当归一化为1
         noise = sqrt(N0(iter_snr)/2)*randn(1,E);
         y = symbols + noise;
-        LLR = log(abs(y-constellation(2)).^2./abs(y-constellation(1)).^2);
+        LLR = -4*y/N0;
         a_hat = polar_decoder(LLR, A, E, L ,CRC_size);
         bit_err = bit_err+sum(a_hat~=a);
         if sum(a_hat~=a)>0
