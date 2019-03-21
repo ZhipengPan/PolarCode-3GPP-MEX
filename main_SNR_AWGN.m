@@ -36,9 +36,9 @@ tic
 
 A = 30;
 E = 100;
-CRC_size = 6;
+CRC_size = 0;
 M = 2;%modulation type
-L = 4;
+L = 16;
 SNR = 0:1:10;
 if M==2 %BPSK EsN0 = SNR-3(dB)
     EsN0 = SNR-3;
@@ -83,13 +83,13 @@ for iter_snr = 1:length(SNR)
         ESC = ESC+mean(mean(symbols.*conj(symbols)));%统计空口中每个符号能量，应当归一化为1
         noise = sqrt(N0(iter_snr)/2)*randn(1,E);
         y = symbols + noise;
-        LLR = -4*y/N0;
+        LLR = -4*y/N0(iter_snr);
         a_hat = polar_decoder(LLR, A, E, L ,CRC_size);
         bit_err = bit_err+sum(a_hat~=a);
         if sum(a_hat~=a)>0
             blk_err = blk_err + 1;
         end
-        if( bit_err>500&&ii*A>1e4 || ii*A > 1e7) 
+        if( bit_err>500&&ii*A>1e5 || ii*A > 1e7) 
             break;
         end
     end
